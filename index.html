@@ -1,11 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Bem-vindo ao meu site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanUp Experience</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <h1>Serviço de Limpeza</h1>
-  <p>Profissionalismo, agilidade e confiança para sua casa ou escritório!</p>
+  <header class="header">
+    <img src="logo.png" alt="CleanUp Experience Logo" class="logo">
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Complete House & Office Cleaning Services</h1>
+    <p>Experience the sparkle with CleanUp Experience – your trusted cleaning solution!</p>
+    <a href="#contact" class="btn-primary">Get a Quote</a>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      <div class="service">
+        <h3>House Cleaning</h3>
+        <p>Comprehensive home cleaning from top to bottom. Regular or deep cleaning options available.</p>
+      </div>
+      <div class="service">
+        <h3>Office Cleaning</h3>
+        <p>Maintain a clean and healthy workspace with our reliable office cleaning services.</p>
+      </div>
+      <div class="service">
+        <h3>Move-In / Move-Out</h3>
+        <p>Stress-free moving with our detailed cleaning services for new or vacated spaces.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>CleanUp Experience is committed to delivering high-quality cleaning solutions. Our team is trained, reliable, and ready to make your space shine. Let us do the dirty work while you relax!</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form action="#" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="How can we help you?" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 CleanUp Experience. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>
