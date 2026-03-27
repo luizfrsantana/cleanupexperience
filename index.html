@@ -31,7 +31,7 @@
         }
 
         /* Soap Bubbles Background Animation */
-       .bubbles-container {
+      .bubbles-container {
             position: fixed;
             top: 0;
             left: 0;
@@ -42,7 +42,7 @@
             pointer-events: none;
         }
 
-       .bubble {
+      .bubble {
             position: absolute;
             bottom: -100px;
             background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 168, 232, 0.2));
@@ -52,13 +52,13 @@
             animation: float 10s infinite ease-in;
         }
 
-       .bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 8s; }
-       .bubble:nth-child(2) { width: 80px; height: 80px; left: 20%; animation-duration: 12s; animation-delay: 2s; }
-       .bubble:nth-child(3) { width: 50px; height: 50px; left: 35%; animation-duration: 7s; animation-delay: 4s; }
-       .bubble:nth-child(4) { width: 100px; height: 100px; left: 50%; animation-duration: 14s; }
-       .bubble:nth-child(5) { width: 35px; height: 35px; left: 65%; animation-duration: 6s; animation-delay: 1s; }
-       .bubble:nth-child(6) { width: 70px; height: 70px; left: 80%; animation-duration: 10s; animation-delay: 3s; }
-       .bubble:nth-child(7) { width: 120px; height: 120px; left: 90%; animation-duration: 15s; animation-delay: 5s; }
+      .bubble:nth-child(1) { width: 40px; height: 40px; left: 10%; animation-duration: 8s; }
+      .bubble:nth-child(2) { width: 80px; height: 80px; left: 20%; animation-duration: 12s; animation-delay: 2s; }
+      .bubble:nth-child(3) { width: 50px; height: 50px; left: 35%; animation-duration: 7s; animation-delay: 4s; }
+      .bubble:nth-child(4) { width: 100px; height: 100px; left: 50%; animation-duration: 14s; }
+      .bubble:nth-child(5) { width: 35px; height: 35px; left: 65%; animation-duration: 6s; animation-delay: 1s; }
+      .bubble:nth-child(6) { width: 70px; height: 70px; left: 80%; animation-duration: 10s; animation-delay: 3s; }
+      .bubble:nth-child(7) { width: 120px; height: 120px; left: 90%; animation-duration: 15s; animation-delay: 5s; }
 
         @keyframes float {
             0% { transform: translateY(0) scale(1); opacity: 0; }
@@ -72,7 +72,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
+            padding: 15px 5%;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
             position: sticky;
@@ -82,7 +82,7 @@
             gap: 15px;
         }
 
-       .logo {
+      .logo {
             font-size: 28px;
             font-weight: 700;
             color: var(--secondary-blue);
@@ -91,7 +91,7 @@
             gap: 5px;
         }
 
-       .logo span { color: var(--accent-green); }
+      .logo span { color: var(--accent-green); }
 
         nav {
             display: flex;
@@ -109,31 +109,69 @@
 
         nav a:hover { color: var(--secondary-blue); }
 
-       .hero {
+        /* Header Actions (Social Icons + Button) */
+      .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+      .social-header {
+            display: flex;
+            gap: 8px;
+        }
+
+      .social-header a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(26, 54, 93, 0.06);
+            padding: 8px;
+            border-radius: 50%;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+      .social-header a:hover {
+            background: rgba(26, 54, 93, 0.12);
+            transform: translateY(-2px);
+        }
+
+      .social-header svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-blue);
+            transition: fill 0.3s;
+        }
+
+      .social-header a:hover svg {
+            fill: var(--secondary-blue);
+        }
+
+      .hero {
             text-align: center;
             padding: 100px 20px;
             max-width: 900px;
             margin: 0 auto;
         }
 
-       .hero h1 {
+      .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
             line-height: 1.2;
         }
 
-       .hero p {
+      .hero p {
             font-size: 20px;
             margin-bottom: 40px;
             color: #4a5568;
         }
 
-       .btn {
+      .btn {
             background-color: var(--accent-green);
             color: var(--white);
-            padding: 15px 40px;
+            padding: 12px 25px;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
             border-radius: 30px;
             box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
@@ -142,23 +180,28 @@
             text-align: center;
         }
 
-       .btn:hover {
+      .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
         }
+        
+      .hero.btn {
+            padding: 15px 40px;
+            font-size: 18px;
+        }
 
-       .services {
+      .services {
             padding: 80px 5%;
         }
 
-       .section-title {
+      .section-title {
             text-align: center;
             font-size: 36px;
             margin-bottom: 50px;
             color: var(--primary-blue);
         }
 
-       .grid {
+      .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
@@ -166,7 +209,7 @@
             margin: 0 auto;
         }
 
-       .card {
+      .card {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.8);
@@ -177,25 +220,25 @@
             transition: transform 0.3s;
         }
 
-       .card:hover { transform: translateY(-5px); }
+      .card:hover { transform: translateY(-5px); }
 
-       .card-icon {
+      .card-icon {
             font-size: 40px;
             margin-bottom: 20px;
         }
 
-       .card h3 {
+      .card h3 {
             color: var(--secondary-blue);
             margin-bottom: 15px;
             font-size: 22px;
         }
 
-       .card p {
+      .card p {
             font-size: 15px;
             color: #4a5568;
         }
 
-       .contact-bar {
+      .contact-bar {
             background-color: var(--primary-blue);
             color: var(--white);
             text-align: center;
@@ -203,12 +246,12 @@
             margin-top: 50px;
         }
 
-       .contact-bar h2 { margin-bottom: 20px; font-size: 32px; }
-       .contact-bar p { font-size: 22px; font-weight: 600; margin-bottom: 10px; }
-       .contact-bar span { color: var(--secondary-blue); }
+      .contact-bar h2 { margin-bottom: 20px; font-size: 32px; }
+      .contact-bar p { font-size: 22px; font-weight: 600; margin-bottom: 10px; }
+      .contact-bar span { color: var(--secondary-blue); }
 
         /* Floating WhatsApp Button */
-       .whatsapp-float {
+      .whatsapp-float {
             position: fixed;
             bottom: 30px;
             right: 30px;
@@ -226,46 +269,55 @@
             transition: transform 0.3s;
         }
 
-       .whatsapp-float:hover { transform: scale(1.05); }
-       .whatsapp-float svg { width: 24px; height: 24px; fill: white; }
+      .whatsapp-float:hover { transform: scale(1.05); }
+      .whatsapp-float svg { width: 24px; height: 24px; fill: white; }
 
         /* Mobile Responsiveness */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             header {
                 flex-direction: column;
                 text-align: center;
-                padding: 15px;
             }
+          .header-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+          .social-header {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
             nav {
                 width: 100%;
                 gap: 15px;
                 font-size: 14px;
             }
-           .hero {
+          .hero {
                 padding: 60px 15px;
             }
-           .hero h1 { 
+          .hero h1 { 
                 font-size: 32px; 
             }
-           .hero p {
+          .hero p {
                 font-size: 16px;
             }
-           .section-title {
+          .section-title {
                 font-size: 28px;
             }
-           .contact-bar h2 { 
+          .contact-bar h2 { 
                 font-size: 24px; 
             }
-           .contact-bar p { 
+          .contact-bar p { 
                 font-size: 18px; 
             }
-           .whatsapp-float {
+          .whatsapp-float {
                 bottom: 15px;
                 right: 15px;
                 padding: 10px 20px;
                 font-size: 14px;
             }
-           .whatsapp-float svg {
+          .whatsapp-float svg {
                 width: 20px;
                 height: 20px;
             }
@@ -291,7 +343,22 @@
             <a href="#about">About Us</a>
             <a href="#contact">Contact</a>
         </nav>
-        <a href="https://wa.me/12369927065" class="btn" style="padding: 10px 25px; font-size: 16px;">Free Quote</a>
+        
+        <div class="header-actions">
+            <div class="social-header">
+                <a href="https://www.facebook.com/profile.php?id=61576407746476" target="_blank" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C14.05 8.62 13.62 9.33 13.62 10.12V12.06H16.35L15.91 14.96H13.62V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/cleanupexperience/" target="_blank" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 1.76-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 5.221 2.622 6.78 6.981 6.98 1.28.058 1.689.072 4.947.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-1.76 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-5.22-2.622-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </a>
+            </div>
+            <a href="https://wa.me/12369927065" class="btn">Free Quote</a>
+        </div>
     </header>
 
     <section class="hero">
