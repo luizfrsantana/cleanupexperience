@@ -87,6 +87,23 @@
     items.forEach(function (el) { el.classList.add('in'); });
   }
 
+  // Reviews carousel arrows
+  var track = document.getElementById('reviews-track');
+  if (track) {
+    var prev = document.querySelector('.rev-nav.prev');
+    var next = document.querySelector('.rev-nav.next');
+    function step() { var c = track.querySelector('.review'); return c ? c.getBoundingClientRect().width + 24 : 300; }
+    function update() {
+      prev.disabled = track.scrollLeft < 8;
+      next.disabled = track.scrollLeft + track.clientWidth > track.scrollWidth - 8;
+    }
+    prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
   // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
