@@ -99,6 +99,7 @@
       <nav class="main-nav" id="main-nav" aria-label="Main">
         <a href="#services">Services</a>
         <a href="#reviews">Reviews</a>
+        <a href="#results">Results</a>
         <a href="#how">How It Works</a>
         <a href="#about">About Us</a>
         <a href="#areas">Areas</a>
@@ -293,8 +294,43 @@
       </div>
     </section>
 
+    <!-- ================= BEFORE & AFTER (real jobs) ================= -->
+    <section class="section section-alt" id="results">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker">Before &amp; after</p>
+          <h2>See the difference</h2>
+          <p>Real results from our jobs. Drag the slider to compare.</p>
+        </div>
+        <div class="ba-grid">
+          <figure class="ba-card reveal">
+            <div class="ba-slider" style="--pos:50%">
+              <img src="/assets/results/bathtub-after.jpg" alt="Bathtub after cleaning: bright white, no stains" width="620" height="680" loading="lazy">
+              <img class="ba-before" src="/assets/results/bathtub-before.jpg" alt="Bathtub before cleaning: yellowed stains and soap scum" width="620" height="680" loading="lazy">
+              <span class="ba-label ba-label-before">Before</span>
+              <span class="ba-label ba-label-after">After</span>
+              <span class="ba-handle" aria-hidden="true"><svg><use href="#i-arrow"/></svg><svg><use href="#i-arrow"/></svg></span>
+              <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+            </div>
+            <figcaption><strong>Bathtub</strong> Stains and soap scum removed, finish restored</figcaption>
+          </figure>
+          <figure class="ba-card reveal">
+            <div class="ba-static">
+              <img src="/assets/results/oven-racks.jpg" alt="Two oven racks side by side: the top one cleaned and shiny, the bottom one still covered in burnt grease" width="630" height="802" loading="lazy">
+              <span class="ba-label ba-label-after" style="top:14px;left:14px;right:auto">After</span>
+              <span class="ba-label ba-label-before" style="top:47%;left:14px">Before</span>
+            </div>
+            <figcaption><strong>Oven racks</strong> Burnt-on grease removed, back to shiny metal</figcaption>
+          </figure>
+        </div>
+        <div class="reviews-cta">
+          <a class="btn btn-ghost" href="https://www.instagram.com/cleanupexperience/" target="_blank" rel="noopener"><svg aria-hidden="true" fill="currentColor"><use href="#i-instagram"/></svg>More results on Instagram</a>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= HOW IT WORKS ================= -->
-    <section class="section section-alt" id="how">
+    <section class="section" id="how">
       <div class="container">
         <div class="section-head reveal">
           <p class="kicker">How it works</p>

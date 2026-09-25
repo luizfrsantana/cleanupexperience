@@ -102,7 +102,47 @@
     track.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
     update();
+
+    // "Read more" for long reviews
+    track.querySelectorAll('.review').forEach(function (card) {
+      var q = card.querySelector('blockquote');
+      if (q.scrollHeight - q.clientHeight < 4) return;
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'read-more'; btn.textContent = 'Read more';
+      btn.addEventListener('click', function () {
+        var open = card.classList.toggle('expanded');
+        btn.textContent = open ? 'Show less' : 'Read more';
+      });
+      q.after(btn);
+    });
   }
+
+  // Before/after slider (+ one automatic sweep when it first appears, like a video reveal)
+  document.querySelectorAll('.ba-slider').forEach(function (box) {
+    var range = box.querySelector('.ba-range');
+    var touched = false;
+    function set(v) { box.style.setProperty('--pos', v + '%'); range.value = v; }
+    range.addEventListener('input', function () { touched = true; set(range.value); });
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;
+    var seen = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      seen.disconnect();
+      var frames = [[0, 50], [700, 88], [1500, 12], [2300, 50]], start = null;
+      function tick(t) {
+        if (touched) return;
+        if (!start) start = t;
+        var e = t - start, i = 1;
+        while (i < frames.length - 1 && e > frames[i][0]) i++;
+        var a = frames[i - 1], b = frames[i], k = Math.min(1, Math.max(0, (e - a[0]) / (b[0] - a[0])));
+        k = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        set((a[1] + (b[1] - a[1]) * k).toFixed(1));
+        if (e < frames[frames.length - 1][0]) requestAnimationFrame(tick);
+      }
+      setTimeout(function () { requestAnimationFrame(tick); }, 400);
+    }, { threshold: 0.6 });
+    seen.observe(box);
+  });
 
   // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
