@@ -144,6 +144,19 @@
     seen.observe(box);
   });
 
+  // Result videos: play only while visible (saves data on phones)
+  document.querySelectorAll('.ba-video').forEach(function (v) {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { v.controls = true; v.preload = 'metadata'; return; }
+    if (!('IntersectionObserver' in window)) { v.autoplay = true; v.preload = 'auto'; return; }
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () { v.controls = true; }); }
+        else v.pause();
+      });
+    }, { threshold: 0.4 }).observe(v);
+  });
+
   // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
