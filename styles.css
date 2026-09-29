@@ -124,6 +124,29 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .chips li { display: flex; align-items: center; gap: 8px; font-size: 15px; color: var(--navy); font-weight: 500; }
 .chips svg { width: 20px; height: 20px; stroke: var(--green); flex: none; }
 
+/* Hero with photo background */
+.hero--photo {
+  background:
+    linear-gradient(90deg, rgba(20,48,79,.93) 0%, rgba(20,48,79,.80) 38%, rgba(20,48,79,.30) 68%, rgba(20,48,79,0) 100%),
+    url(/assets/hero-living.jpg) 70% center / cover no-repeat;
+  color: #fff; padding: 120px 0 130px;
+}
+.hero--photo .hero-grid { grid-template-columns: 1fr; }
+.hero--photo h1 { color: #fff; max-width: 640px; }
+.hero--photo h1 .hl { color: #5fd0ff; }
+.hero--photo .lead { color: rgba(255,255,255,.9); max-width: 520px; }
+.hero--photo .chips li { color: rgba(255,255,255,.92); }
+.hero--photo .chips svg { stroke: #7fe0b8; }
+.hero--photo .eyebrow { background: rgba(255,255,255,.15); color: #fff; }
+@media (max-width: 880px) {
+  .hero--photo {
+    background:
+      linear-gradient(180deg, rgba(20,48,79,.88) 0%, rgba(20,48,79,.78) 100%),
+      url(/assets/hero-living.jpg) 72% center / cover no-repeat;
+    padding: 56px 0 64px;
+  }
+}
+
 /* Hero illustration card */
 .hero-card {
   position: relative; background: #fff; border-radius: 24px; padding: 28px; box-shadow: var(--shadow-lg);
